@@ -1,10 +1,13 @@
-import { BiPhoneCall } from "react-icons/bi";
+import { BiMenuAltRight, BiPhoneCall } from "react-icons/bi";
 import { motion } from "motion/react";
-import { headerVariants } from "../../utils/motion";
+import { getMenuStyles, headerVariants } from "../../utils/motion";
 
 import css from "./Header.module.scss";
+import { useState } from "react";
 
 const Header = () => {
+  const [menuOpened, setMenuOpened] = useState(false);
+
   return (
     <motion.div
       initial="hidden"
@@ -15,7 +18,10 @@ const Header = () => {
     >
       <div className={`flexCenter innerWidth ${css.container}`}>
         <div className={css.name}>YangXiao</div>
-        <ul className={`flexCenter ${css.menu}`}>
+        <ul
+          style={getMenuStyles(menuOpened)}
+          className={`flexCenter ${css.menu}`}
+        >
           <li>
             <a href="">服务</a>
           </li>
@@ -33,6 +39,14 @@ const Header = () => {
             <BiPhoneCall size={`40px`} />
           </li>
         </ul>
+
+        {/* 只适用小屏幕和中等屏幕 */}
+        <div
+          onClick={() => setMenuOpened(!menuOpened)}
+          className={css.menuIcon}
+        >
+          <BiMenuAltRight size={30} />
+        </div>
       </div>
     </motion.div>
   );
