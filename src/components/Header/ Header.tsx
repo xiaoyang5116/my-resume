@@ -1,12 +1,14 @@
+import { useState } from "react";
 import { BiMenuAltRight, BiPhoneCall } from "react-icons/bi";
 import { motion } from "motion/react";
 import { getMenuStyles, headerVariants } from "../../utils/motion";
+import useHeaderShadow from "../../hooks/useHeaderShadow";
 
 import css from "./Header.module.scss";
-import { useState } from "react";
 
 const Header = () => {
   const [menuOpened, setMenuOpened] = useState(false);
+  const headerShadow = useHeaderShadow();
 
   return (
     <motion.div
@@ -15,6 +17,7 @@ const Header = () => {
       variants={headerVariants}
       viewport={{ once: false, amount: 0.25 }}
       className={`paddings ${css.wrapper}`}
+      style={{ boxShadow: headerShadow }}
     >
       <div className={`flexCenter innerWidth ${css.container}`}>
         <div className={css.name}>YangXiao</div>
