@@ -3,7 +3,7 @@ import css from "./styles/app.module.scss";
 
 function App() {
   return (
-    <div className={css.container}>
+    <div className={`bg-primary ${css.container}`}>
       <Header />
     </div>
   );

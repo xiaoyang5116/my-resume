@@ -1,6 +1,7 @@
+@import "./constants.scss";
+
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  overflow-x: clip;
+  position: relative;
+  color: $primary;
 }
