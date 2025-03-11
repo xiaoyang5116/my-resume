@@ -16,18 +16,28 @@ export const Hero = () => {
           </span>
         </div>
 
+        {/* person image */}
+        <div className={css.person}>
+          <img src="./hero2.png" alt="人像" />
+        </div>
+
+        {/* email */}
+        <a className={css.email} href="mailto:1443584075@qq.com">
+          1443584075@qq.com
+        </a>
+
         <div className={css.lowerElement}>
           <div className={css.experience}>
-            <div className="primaryText">3</div>
+            <div className="primaryText">4</div>
             <div className="secondaryText">
               <div>年</div>
               <div>经验</div>
             </div>
           </div>
-          <div className={css.certificate}>
+          {/* <div className={css.certificate}>
             <img src="./certificate.png" alt="" />
             <span>前端开发工程师</span>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
